@@ -1,11 +1,13 @@
-import 'package:chat_with/auth_folder/signup_screen.dart';
-import 'package:chat_with/ui_folder/bottom_nav.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'auth_folder/auth_screen.dart';
-import 'auth_folder/signin_screen.dart';
-import 'auth_folder/splash_screen.dart';
+
+import 'auth_screen/auth_screen.dart';
+import 'auth_screen/signin_screen.dart';
+import 'auth_screen/signup_screen.dart';
+import 'auth_screen/splash_screen.dart';
+import 'build_screen_folder/build_bottom_nav.dart';
+
 
 
 void main()async{
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/auth', page: () =>  const AuthScreen(),),
         GetPage(name: '/signIn', page: () =>   SignInScreen(),),
         GetPage(name: '/signup', page: () =>   SignupScreen(),),
-        GetPage(name: '/bottomNav', page: () =>  BottomNav(),),
+        GetPage(name: '/bottomNav', page: () =>  BuildBottomNav(),),
       ],
     );
   }

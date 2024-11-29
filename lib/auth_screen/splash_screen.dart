@@ -1,8 +1,6 @@
-import 'package:chat_with/widget_folder/hw_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../getx_controllers/splash_getx_controller.dart';
 
 

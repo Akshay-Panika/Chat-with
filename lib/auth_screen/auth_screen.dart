@@ -1,7 +1,8 @@
-import 'package:chat_with/widget_folder/hw_widget.dart';
+import 'package:chat_with/custom_widget/hw_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../widget_folder/round_button_widget.dart';
+
+import '../custom_widget/round_button_widget.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -21,24 +22,24 @@ class AuthScreen extends StatelessWidget {
                 backgroundImage: AssetImage('assets/image/chatwithvideo.jpg')
             ),
 
-             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("Start", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-                const Text("your", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                const Text("adventure", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                60.height,
-              ],
-            ),
 
+             /// Description part
+             const Text("""
+             
+        Start 
+                  Your 
+                           Adventure""", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+
+
+            /// Sign in sign up part
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 roundButtonWidget(
                     text: "Sign In",
-                    height: 50,width: double.infinity,
-                    color: Colors.black,
+                    height: 45,width: double.infinity,
+                    color: Colors.black87,
                   onTap: () =>  Get.offNamed('/signIn'),
                 ),
                 20.height,

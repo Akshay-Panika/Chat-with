@@ -15,7 +15,7 @@ roundButtonWidget({
       width: width,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Center(
         child: Text(text, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),

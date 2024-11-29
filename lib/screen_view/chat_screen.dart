@@ -1,5 +1,4 @@
-import 'package:chat_with/auth_folder/auth_screen.dart';
-import 'package:chat_with/widget_folder/hw_widget.dart';
+import 'package:chat_with/custom_widget/hw_widget.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -8,6 +7,9 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Chat With"),
+        backgroundColor: Colors.transparent,),
       body: Column(
         children: [
           // Chat messages area

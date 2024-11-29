@@ -1,9 +1,8 @@
+import 'package:chat_with/custom_widget/hw_widget.dart';
 import 'package:chat_with/getx_controllers/signin_getx_controller.dart';
-import 'package:chat_with/widget_folder/hw_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../widget_folder/round_button_widget.dart';
+import '../custom_widget/round_button_widget.dart';
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
@@ -12,11 +11,11 @@ class SignInScreen extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
   final SignInGetXController signInGetXController = Get.put(SignInGetXController());
 
-  Future<void> setPhonePassword(String phone, String password) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('phone', phone);
-    await prefs.setString('password', password);
-  }
+  // Future<void> setPhonePassword(String phone, String password) async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   await prefs.setString('phone', phone);
+  //   await prefs.setString('password', password);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +67,7 @@ class SignInScreen extends StatelessWidget {
                        ? const Center(child: CircularProgressIndicator())
                        : roundButtonWidget(
                      text: "Sign In",
-                     height: 50,width: double.infinity,
+                     height: 45,width: double.infinity,
                      color: Colors.black87,
                      onTap: () {
                        final phone = phoneController.text.trim();
@@ -91,13 +90,12 @@ class SignInScreen extends StatelessWidget {
                      10.width,
                      TextButton(onPressed: () {
                        Get.toNamed('/signup');
-                     }, child:  Text("Sign Up",))
+                     }, child:  const Text("Sign Up",))
                    ],
                  ),
                ],
              ),
            )
-       
          ],
        ),
      ),

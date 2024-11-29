@@ -1,18 +1,17 @@
-import 'package:chat_with/auth_folder/auth_screen.dart';
-import 'package:chat_with/ui_folder/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import '../getx_controllers/bottomnav_getx_controller.dart';
-import '../widget_folder/appbar_widget.dart';
-import 'chat_screen.dart';
-import 'home_screen.dart';
+import '../screen_view/chat_screen.dart';
+import '../screen_view/home_screen.dart';
+import '../screen_view/profile_screen.dart';
+import 'build_appbar.dart';
 
-class BottomNav extends StatelessWidget {
 
-  BottomNav({super.key,});
+class BuildBottomNav extends StatelessWidget {
+
+  BuildBottomNav({super.key,});
 
   final BottomNavGetXController bottomNavController = Get.put(BottomNavGetXController());
 
@@ -25,16 +24,7 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    return Scaffold(
-     body: SafeArea(
-       child: Column(
-         children: [
-           // User info row
-            AppbarWidget(),
-           
-           Expanded(child: Obx(() => _screen[bottomNavController.selectedIndex.value],))
-         ],
-       ),
-     ),
+     body: Obx(() => _screen[bottomNavController.selectedIndex.value],),
 
 
      // Bottom Navigation Bar

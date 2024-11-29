@@ -1,13 +1,12 @@
-import 'package:chat_with/widget_folder/hw_widget.dart';
+import 'package:chat_with/custom_widget/hw_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '../custom_widget/round_button_widget.dart';
 import '../getx_controllers/signup_getx_controller.dart';
-import '../models_folder/user_model.dart';
-import '../widget_folder/img_picker_widget.dart';
-import '../widget_folder/round_button_widget.dart';
+import '../models/user_model.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
@@ -29,16 +28,17 @@ class SignupScreen extends StatelessWidget {
           children: [
             100.height,
 
+            /// "New\nAccount",
             const Padding(
               padding: EdgeInsets.only(left: 40.0, bottom: 40),
               child: Text(
                 "New\nAccount",
-                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, height: 0.9 ),
               ),
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              padding: const EdgeInsets.only(left: 40.0,right: 40,top: 30),
               child: Row(
                 children: [
                   const CircleAvatar(radius: 40,),
@@ -98,6 +98,7 @@ class SignupScreen extends StatelessWidget {
             ):const SizedBox()),
 
             /// Action Button (Send OTP or Verify OTP)
+            20.height,
             Padding(
               padding:  const EdgeInsets.all(40.0),
               child: Column(
@@ -107,7 +108,7 @@ class SignupScreen extends StatelessWidget {
                         ? const Center(child: CircularProgressIndicator())
                         : roundButtonWidget(
                       text: isOtpSent.value ? "Verify OTP" : "Send OTP",
-                      height: 50,
+                      height: 45,
                       width: double.infinity,
                       color: Colors.black87,
                       onTap: isOtpSent.value ? verifyOtp : sendOtp,
